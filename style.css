@@ -1,0 +1,34 @@
+*{
+    background-color: burlywood;
+    margin: 1cm;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+#pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Style the page buttons */
+  .page-button {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: #ddd;
+    cursor: pointer;
+    margin: 0 4px;
+  }
+
+  /* Style the active page button */
+  .page-button.active {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  /* Style the page buttons on hover */
+  .page-button:hover {
+    background-color: #eee;
+  }
