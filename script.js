@@ -1,6 +1,26 @@
+let division = document.createElement("div");
+
+document.body.append(division);
+
+
 let head = document.createElement("h1");
 head.textContent = "Email Database";
-document.body.appendChild(head);
+head.id="title";
+division.appendChild(head);
+let description = document.createElement("p");
+description.textContent = 'This is a Pagination task using DOM functionalities'
+description.id='description';
+division.appendChild(description);
+
+
+let table_divisions = document.createElement("div");
+division.appendChild(table_divisions);
+
+
+
+
+
+
 
 const data = [
   {
@@ -522,8 +542,9 @@ function displayItems(page) {
   }
 }
 const paginationContainer = document.createElement("div");
+paginationContainer.className='table-responsive';
 paginationContainer.id = "pagination";
-const itemsContainer = document.createElement("div");
+const itemsContainer = document.createElement("table");
 
 for (let i = 0; i < data.length; i++) {
   const item = document.createElement("div");
@@ -532,9 +553,21 @@ for (let i = 0; i < data.length; i++) {
   itemsContainer.appendChild(item);
 }
 
-document.body.appendChild(itemsContainer);
+table_divisions.appendChild(itemsContainer);
 
 let currentPage = 1;
+
+let first = document.createElement("button");
+first.className="btn-first";
+first.innerHTML="First";
+division.appendChild(first);
+
+
+
+let last = document.createElement("button");
+division.className="btn-last";
+division.id="last ";
+division.appendChild(last);
 
 for (let i = 1; i <= numPages; i++) {
   const pageButton = document.createElement("button");
@@ -556,7 +589,7 @@ for (let i = 1; i <= numPages; i++) {
   paginationContainer.appendChild(pageButton);
 }
 
-document.body.appendChild(paginationContainer);
+division.appendChild(paginationContainer);
 
 document.querySelector(".page-button").classList.add("active");
 displayItems(currentPage);
